@@ -10,10 +10,10 @@ package actividadgit;
  */
 public class CCuenta {
 
-    String name;
-    String cuenta;
-    double saldo;
-    double tipoInterés;
+    private String name;
+    private String cuenta;
+    private double saldo;
+    private double tipoInterés;
 
     public CCuenta() {
     }
@@ -25,7 +25,7 @@ public class CCuenta {
     }
 
     public double estado() {
-        return saldo;
+        return getSaldo();
     }
 
     public void retirar(double cantidad) {
@@ -37,7 +37,7 @@ public class CCuenta {
             if (estado() < cantidad) {
                 throw new Exception("No se hay suficiente saldo");
             }
-            saldo = saldo - cantidad;
+            setSaldo(getSaldo() - cantidad);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -50,9 +50,66 @@ public class CCuenta {
             if (cantidad < 0) {
                 throw new Exception("No se puede ingresar una cantidad negativa");
             }
-            saldo = saldo + cantidad;
+            setSaldo(getSaldo() + cantidad);
         } catch (Exception e) {
             System.out.println(e);
         }
     }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the cuenta
+     */
+    public String getCuenta() {
+        return cuenta;
+    }
+
+    /**
+     * @param cuenta the cuenta to set
+     */
+    public void setCuenta(String cuenta) {
+        this.cuenta = cuenta;
+    }
+
+    /**
+     * @return the saldo
+     */
+    public double getSaldo() {
+        return saldo;
+    }
+
+    /**
+     * @param saldo the saldo to set
+     */
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    /**
+     * @return the tipoInterés
+     */
+    public double getTipoInterés() {
+        return tipoInterés;
+    }
+
+    /**
+     * @param tipoInterés the tipoInterés to set
+     */
+    public void setTipoInterés(double tipoInterés) {
+        this.tipoInterés = tipoInterés;
+    }
 }
+ 

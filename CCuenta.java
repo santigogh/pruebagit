@@ -10,7 +10,7 @@ package actividadgit;
  */
 public class CCuenta {
 
-    String nombre;
+    String name;
     String cuenta;
     double saldo;
     double tipoInterés;
@@ -19,7 +19,7 @@ public class CCuenta {
     }
 
     public CCuenta(String nom, String cue, double sal, double tipo) {
-        nombre = nom;
+        name = nom;
         cuenta = cue;
         saldo = sal;
     }
